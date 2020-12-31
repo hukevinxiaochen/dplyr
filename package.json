@@ -1,0 +1,14 @@
+{
+  "name": "dplyr",
+  "version": "1.0.0",
+  "description": "a server that handles git webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Hu",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
