@@ -24,11 +24,14 @@ This application can:
 
 ## Configuring the Server
 
-### TODO: Put secrets in a .env file
+### Put secrets in a .env file
 
-Secrets for this application are the `GITHUB_WEBHOOK_SECRET` and the 
-`REPO_TO_UPDATE` (a path to the directory in which you want a command
- to be run).
+Secrets that need configuring for this application to work are:
+
+- `GITHUB_WEBHOOK_PORT` - just has to be available for use on the server this app is running on.
+- `GITHUB_WEBHOOK_SECRET` - you decide this when you create the webhook in Github.
+- `REPO_TO_UPDATE` - a path to the directory in which you want a command
+ to be run.
 
 ## Running the Server
 
@@ -39,6 +42,14 @@ To run the server while you're SSH'd into the server, one just needs to:
 ### TODO: Configure this to run with systemd as process manager
 
 Systemd is available on many Linux distributions as a process manager and init system that will keep this server running through shutdowns and allows you to walk away and terminate your SSH and shell session knowing that this server will be up and running, ready to go.
+
+### Configure this to have requests proxied to it via NGINX
+
+Allows for using the rate limit module required for throttling requests.
+
+### TODO: Configure to ensure some throttling of requests
+
+My small server does not have huge capacity so it should have a way to throttle requests. This would protect against abuse of the Webhook endpoint too.
 
 ## Resources
 
