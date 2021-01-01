@@ -40,6 +40,10 @@ http
             console.error(err);
           });
         });
+      } else {
+        appendFile("./log.txt", `${log.join("\n")}\n`, (err) => {
+          console.error(err);
+        });
       }
     });
     res.end();

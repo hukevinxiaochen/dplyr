@@ -12,6 +12,7 @@ Assuming:
   `git pull` or `npm run build`.
 
 - The server on which we wish to run this has `node` installed.
+  - The user is running this app has access to the version of `node`, `npm`, etc. that you want to be using. Try `sudo -u <app-user> which node` to find out.
 - The user who will run this server process has permissions to run commands
  in whatever the target directories are.
 - The server is allowing TCP connections on the `custom_port`
@@ -21,7 +22,8 @@ This application can:
 - Listen on `<custom_port>`
 - Verify that requests are being sent from Github by using the `X-Hub-Signature` header.
 - Execute arbitrary shell commands for verified webhook requests.
-- Logs out shell command error and success messages.
+- Logs out to console shell command error and success messages.
+- Logs out to a file `./log.txt` errors and success messages.
 
 ## Configuring the Server
 
